@@ -27,9 +27,13 @@ class DonationAdapter constructor(private var donations: List<DonationModel>)
     inner class MainHolder(val binding : CardDonationBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(donation: DonationModel) {
-            binding.paymentamount.text = donation.amount.toString()
-            binding.paymentmethod.text = donation.paymentmethod
+            //binding.paymentamount.text = donation.amount.toString()
+            //binding.paymentmethod.text = donation.paymentmethod
+
+            binding.donation = donation
             binding.imageIcon.setImageResource(R.mipmap.ic_launcher_round)
+            // Include this call to force the bindings to happen immediately
+            binding.executePendingBindings()
         }
     }
 }
