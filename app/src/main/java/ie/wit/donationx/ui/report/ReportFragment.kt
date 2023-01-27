@@ -84,7 +84,7 @@ class ReportFragment : Fragment(), DonationClickListener {
     }
 
     override fun onDonationClick(donation: DonationModel) {
-        val action = ReportFragmentDirections.actionReportFragmentToDonationDetailFragment()
+        val action = ReportFragmentDirections.actionReportFragmentToDonationDetailFragment(donation.id)
         findNavController().navigate(action)
     }
 }
